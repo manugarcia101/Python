@@ -30,3 +30,5 @@ def simple(num1, num2=4):
     
 simple(5)#prints 5 and 4
 simple(3,5)#prints 3 and 5
+
+#pass inside a function can be used to say ey!, just do nothing
