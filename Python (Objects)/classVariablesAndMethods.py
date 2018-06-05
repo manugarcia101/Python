@@ -2,7 +2,7 @@
 """
 Created on Tue Jun  5 10:25:43 2018
 
-@author: UJA
+@author: Manu
 """
 #! Python 3.6.3
 #Author: Manuel Garcia Lopez
