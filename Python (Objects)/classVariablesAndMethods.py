@@ -11,6 +11,8 @@ Created on Tue Jun  5 10:25:43 2018
 #We are going to start from the basic employee
 #class we did in the classes.py file
 
+import datetime
+
 class Employee:
     
     #class variables for Employee
@@ -41,6 +43,20 @@ class Employee:
         #this will change the raise_amount of the class Employee
         cls.raise_amount = amount
         
+    #classmethods are also a way of making instances of a class as if they were constructors
+    @classmethod
+    def from_string(cls,emp_str):
+        first, last, pay = emp_str.split('-')
+        return cls(first, last, pay)
+    
+    #static methods (common methods, no parameters like self or cls)
+    #they don't operate on the instance of the class
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+        
     '''
     To sum up:
     Class methods are methods that automatically take the class as the first argument. 
@@ -53,6 +69,16 @@ class Employee:
 emp_1 = Employee('Corey','Schafer',900)
 emp_2 = Employee('Manu','Garcia',1000)
 
+#Creating new employees from a string
+#example arrays with data
+str1 = 'John-Doe-700'
+str2 = 'Pepe-Collado-1000'
+str3 = 'Leonardo-Di_Caprio-2000'
+
+#new employee objects
+new_emp = Employee.from_string(str1)
+
+#raising amounts options
 Employee.set_raise_amount(1.05)
 #this is the same as:
 Employee.raise_amount = 1.05
@@ -76,3 +102,8 @@ print(emp_1.pay)
 emp_1.apply_raise()
 print(emp_1.pay)
 print(Employee.raise_amount)
+
+#working with static methods
+my_date = datetime.date(2018,6,5)
+
+print(Employee.is_workday(my_date))
