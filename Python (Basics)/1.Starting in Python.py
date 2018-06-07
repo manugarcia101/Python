@@ -33,3 +33,19 @@ print(1-3)
 print(2*3)
 print(5/2)
 print(4**4)#exponential multiplications
+
+#to print literally and multiple lines,we can print commentaries
+print('''
+   
+So this is a simple example
+of multiline printing 
+haha
+
+============
+| 
+|  Open
+|  Box
+|
+============
+   
+''')
