@@ -102,3 +102,14 @@ y.pop() #Removes and returns last object or obj from list
 y.remove(1) #Removes object obj from list
 y.reverse() #Reverses objects of list in place
 y.sort() #Sorts objects of list, use compare func if given, you can pass a sort function as a parameter to sort
+
+#multidimensional lists
+x = [[2,3],[4,[52,3,1]],6,7]
+
+#we can access as always the first dimension of this list as:
+print(x[1])
+
+#or we can access more dimensions just accessing each element of each dimension
+#we want to access
+print(x[1][1])#second list dimension
+print(x[1][1][0])#thrid list dimension
