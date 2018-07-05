@@ -1,48 +1,55 @@
-from flask import Flask, render_template, url_for, flash, redirect, request
+from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm, LoginForm
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '5891628bb0b13ce0c676dfde280ba245'
 
-app.config['SECRET_KEY'] = 'c697a01af2a682894c85665364ef21d0' #SECRET KEY TO AVOID XSS
-
-post = [
+posts = [
     {
         'author': 'Manu Garcia',
-        'title': 'First python web',
-        'content': 'First content',
-        'date_posted': 'July 03, 2018'
+        'title': 'Blog Post 1',
+        'content': 'First post content',
+        'date_posted': 'July 4, 2018'
     },
     {
         'author': 'Jane Doe',
-        'title': 'Blog',
-        'content': 'Second content',
-        'date_posted': 'July 04, 2018'
+        'title': 'Blog Post 2',
+        'content': 'Second post content',
+        'date_posted': 'July 5, 2018'
     }
 ]
+
 
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', posts = post)
+    return render_template('home.html', posts=posts)
+
 
 @app.route("/about")
 def about():
-    return render_template('about.html', title = 'About us')
+    return render_template('about.html', title='About')
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    print('Hola q packa')
-    print(str(form))
     if form.validate_on_submit():
-        print('Hola q ase')
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
-@app.route("/login")
+
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    return render_template('login.html', title = 'Login', form = form)
+    if form.validate_on_submit():
+        if form.email.data == 'manu@gmail.com' and form.password.data == '123456':
+            flash('You have been logged in!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Login Unsuccessful. Please check mail and password', 'danger')
+    return render_template('login.html', title='Login', form=form)
 
 ''' To run the script directly, I setted this function
     ONLY FOR THE DEVELOPMENT PROCESS'''
