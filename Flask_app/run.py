@@ -1,0 +1,6 @@
+from app import app
+
+''' To run the script directly, I setted this function
+    ONLY FOR THE DEVELOPMENT PROCESS'''
+if __name__ == '__main__':
+    app.run(debug=True)
