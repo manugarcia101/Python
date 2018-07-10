@@ -8,4 +8,5 @@ This repository will contain all the little activities and my personal progress 
   5.Data Analisis folder is done mainly using matplot library
   6.Guis are done using tkinter library
   7.Some of the tutorials have been done following the videos of Sentex in YouTube and the info of 
-  his web: pythonprogramming.net
+  his web: pythonprogramming.net. Flask web is a web done following the video tutorials of Corey Shafer on 
+  Youtube
