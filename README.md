@@ -7,6 +7,7 @@ This repository will contain all the little activities and my personal progress 
   4.Intermediate and working with the net folders have more complex examples of advanced code in Python
   5.Data Analisis folder is done mainly using matplot library
   6.Guis are done using tkinter library
-  7.Some of the tutorials have been done following the videos of Sentex in YouTube and the info of 
+  7.Machine learning is going to have the basics on this skills in python, aplying some techniques related to data predictions
+  8.Some of the tutorials have been done following the videos of Sentex in YouTube and the info of 
   his web: pythonprogramming.net. Flask web is a web done following the video tutorials of Corey Shafer in 
   Youtube
