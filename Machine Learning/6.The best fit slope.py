@@ -25,4 +25,4 @@ def best_fit_slope(xs,ys):
 
 m = best_fit_slope(xs,ys)
 
-print(m )
+print(m)
